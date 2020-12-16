@@ -12,12 +12,21 @@
 let app = new Vue({
     el: "#app", 
     data:{
-       message: "",
+       studenti: [
+          {text:"Mario Rossi"},
+          {text:"Luca Verdi"},
+          {text:"Elena Bianchi"}
+       ],
+     
     },
 
     methods:{
         inserisci(){
             //console.log("button clicked");
+            this.studenti.push({text:"prova"});
+        },
+        elimina(){
+            
         }
     }
     
