@@ -17,19 +17,13 @@ let app = new Vue({
           {text:"Luca Verdi"},
           {text:"Elena Bianchi"}
        ],
-      value: "",
-      
-      studentiVuota:[],
+      studente: "",
     },
-    created: function(){
-        if(this.studenti == this.studentiVuota){
-            document.getElementById("vuoto").innerHTML = "Non ci sono studenti";
-        }
-    },
+ 
     methods:{
         inserisci(){
             //console.log("button clicked");
-            this.studenti.unshift({text:this.value});
+            this.studenti.unshift({text:this.studente});
         },
         elimina(studente){
             this.studenti.splice(studente, 1)

@@ -12,14 +12,14 @@
             <div id="app">
                 <img src="./assets/img/bool.png" alt="">
                 <div class="inserire">
-                    <input type="text" placeholder="inserisci nome e cognome" v-model="value" @keyup.enter="inserisci">
+                    <input type="text" placeholder="inserisci nome e cognome" v-model="studente" @keyup.enter="inserisci">
                     <button @click="inserisci">Add</button>
                 </div>
                     <h2>Lista Studenti</h2>
                     <ul>
                         <li v-for="studente in studenti">{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
                     </ul>
-                    <p id="vuoto"></p>
+                    <p v-if="studenti.length == 0">Non ci sono studenti</p>
             </div>
 
         
