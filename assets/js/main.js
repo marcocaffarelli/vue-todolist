@@ -12,20 +12,29 @@
 let app = new Vue({
     el: "#app", 
     data:{
+        //Array di stdenti di default
        studenti: [
           {text:"Mario Rossi"},
           {text:"Luca Verdi"},
           {text:"Elena Bianchi"}
        ],
-      studente: "",
+       //valore iniziale dello studente che verrà creato nel input text
+       studente: "",
     },
  
     methods:{
         inserisci(){
             //console.log("button clicked");
-            this.studenti.unshift({text:this.studente});
+            // se l'elemento ha una lunghezza minore di 4 caratteri non verrà inserito nell'array
+            //(this.studente.length < 4) ? null : this.studenti.unshift({text:this.studente});
+            if(this.studente.length < 4){
+            }else {
+                //se'elemento ha più di 3 caratteri verrà inserito nell'array
+                this.studenti.unshift({text:this.studente});
+            }
         },
         elimina(studente){
+            //Cliccando nell'icona lo studente verra eliminato dall'array
             this.studenti.splice(studente, 1)
         }
     }
