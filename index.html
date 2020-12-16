@@ -12,12 +12,14 @@
             <div id="app">
                 <img src="./assets/img/bool.png" alt="">
                 <div class="inserisci">
-                    <input type="text">
-                    <button>Add</button>
+                    <input v-model.lazy="message">
+                    <button @click="inserisci">Add</button>
                 </div>
                     <h2>Lista Studenti</h2>
                     <ul>
                         <li>Mario Rossi<i class="fas fa-user-times"></i></li>
+                        <li>{{message}}<i class="fas fa-user-times"></i></li>
+                        
                     </ul>
             </div>
 

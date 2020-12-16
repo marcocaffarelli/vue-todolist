@@ -29,7 +29,7 @@ h2{
     font-size: 30px;
 }
 li{
-    border: 1px solid black;
+    border: 1px solid lightgreen;
     border-radius: 3px;
     width:500px;
     text-align: center;
