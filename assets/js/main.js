@@ -18,9 +18,14 @@ let app = new Vue({
           {text:"Elena Bianchi"}
        ],
       value: "",
-      contatore: 0
+      
+      studentiVuota:[],
     },
-
+    created: function(){
+        if(this.studenti == this.studentiVuota){
+            document.getElementById("vuoto").innerHTML = "Non ci sono studenti";
+        }
+    },
     methods:{
         inserisci(){
             //console.log("button clicked");
