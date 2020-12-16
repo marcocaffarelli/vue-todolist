@@ -23,10 +23,10 @@ let app = new Vue({
     methods:{
         inserisci(){
             //console.log("button clicked");
-            this.studenti.push({text:this.value});
+            this.studenti.unshift({text:this.value});
         },
         elimina(){
-            
+           
         }
     }
     
