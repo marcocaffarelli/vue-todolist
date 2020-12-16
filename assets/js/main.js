@@ -18,6 +18,7 @@ let app = new Vue({
           {text:"Elena Bianchi"}
        ],
       value: "",
+      contatore: 0
     },
 
     methods:{
@@ -25,8 +26,8 @@ let app = new Vue({
             //console.log("button clicked");
             this.studenti.unshift({text:this.value});
         },
-        elimina(){
-            this.studenti.splice(this)
+        elimina(studente){
+            this.studenti.splice(studente, 1)
         }
     }
     
