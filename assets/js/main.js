@@ -17,13 +17,13 @@ let app = new Vue({
           {text:"Luca Verdi"},
           {text:"Elena Bianchi"}
        ],
-     
+      value: "",
     },
 
     methods:{
         inserisci(){
             //console.log("button clicked");
-            this.studenti.push({text:"prova"});
+            this.studenti.push({text:this.value});
         },
         elimina(){
             
