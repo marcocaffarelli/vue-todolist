@@ -26,7 +26,7 @@ let app = new Vue({
             this.studenti.unshift({text:this.value});
         },
         elimina(){
-           
+            this.studenti.splice(this)
         }
     }
     
