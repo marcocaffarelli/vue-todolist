@@ -56,15 +56,19 @@ let app = new Vue({
             this.studenti.unshift(studente) && this.bocciati.splice(index, 1)
         },
         cestina(){
+            //Cliccando nell'icona tutti gli elementi nella lista bocciati vengono rimossi
             this.bocciati.splice(this.bocciati)
         },
         confermaPromozione(){
+            //Cliccando nell'icona tutti gli elementi nella lista promossi vengono rimossi
             this.promossi.splice(this.promossi)
         },
         promuoviBlocco(){
+            //Cliccando nell'icona tutti gli elementi nella lista studenti vengono spostati nella lista promossi
             this.promossi.unshift(...this.studenti) && this.studenti.splice(this.studenti)
         },
         bocciaBlocco(){
+            //Cliccando nell'icona tutti gli elementi nella lista studenti vengono spostati nella lista bocciati
             this.bocciati.unshift(...this.studenti) && this.studenti.splice(this.studenti)
         }
     }

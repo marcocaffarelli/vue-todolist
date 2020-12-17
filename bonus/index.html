@@ -13,7 +13,7 @@
                 <img src="./assets/img/bool.png" alt="">
                 <div class="inserire">
                     <!-- input dove verrà inserito il nome dell'utente, con keyup.enter si può inserire il testo nel ul premendo enter sulla tastiera -->
-                    <input type="text" placeholder="inserisci nome e cognome" v-model="studente" @keyup.enter="inserisci" >
+                    <input type="text" placeholder="inserisci nome e cognome" v-model="studente" @keyup.enter="inserisci" :maxlength="25">
                     <!-- bottone che al click inserira il testo dell'input nel ul -->
                     <button @click="inserisci">Add</button>
                 </div>
@@ -22,21 +22,26 @@
                     <ul>
                         <!-- studenti promossi  -->
                         <li class="titolo"><i class="fas fa-plane" @click="confermaPromozione"></i>Lista Studenti Promossi</li>
-                        <li v-for="(studente, index) in promossi">{{studente.text}}<i @click="rimuovi(studente,index)" class="fas fa-user-times"></i></li>                     
+                        <li v-for="(studente, index) in promossi">{{studente.text}}<i @click="rimuovi(studente,index)" class="fas fa-user-times"></i></li> 
+                        <!-- testo apparirà solo se la lista sarà vuota -->
+                        <li class="vuoto" v-if="promossi.length == 0">Non ci sono studenti</li>                    
                     </ul>
                     <ul>
                         <!-- studenti in prova-->
-                        <li class="titolo"><i class="far fa-check-circle" @click="promuoviBlocco(studente)"></i>Lista Studenti In Prova<i class="far fa-times-circle" @click="bocciaBlocco(studente)"></i></li>
+                        <li class="titolo"><i class="far fa-check-circle" @click="promuoviBlocco()"></i>Lista Studenti In Prova<i class="far fa-times-circle" @click="bocciaBlocco()"></i></li>
                         <li v-for="(studente, index) in studenti"><i class="fas fa-user-plus" @click="promuovi(studente,index)"></i>{{studente.text}}<i @click="elimina(studente,index)" class="fas fa-user-times"></i></li>                     
+                        <!-- testo apparirà solo se la lista sarà vuota -->
+                        <li class="vuoto" v-if="studenti.length == 0">Non ci sono studenti</li>                  
                     </ul>
                     <ul>
                         <!-- studenti bocciati-->
                         <li class="titolo">Lista Studenti Bocciati <i class="fas fa-trash-alt" @click="cestina"></i></li>
-                        <li v-for="(studente, index) in bocciati"><i class="fas fa-user-plus" @click="ripeti(studente,index)"></i>{{studente.text}}</li>                     
+                        <li v-for="(studente, index) in bocciati"><i class="fas fa-user-plus" @click="ripeti(studente,index)"></i>{{studente.text}}</li>  
+                        <!-- testo apparirà solo se la lista sarà vuota -->
+                        <li class="vuoto" v-if="bocciati.length == 0">Non ci sono studenti</li>                                     
                     </ul>
-                    <!-- paragrafo che apparirà solo se non ci sono studenti -->
                 </div>
-                    <p v-if="studenti.length == 0">Non ci sono studenti</p>
+                    
             </div>
 
         
