@@ -61,8 +61,11 @@ let app = new Vue({
         confermaPromozione(){
             this.promossi.splice(this.promossi)
         },
-        promuoviBlocco(studente){
-            this.promossi.unshift(...studente) && this.studenti.splice(studente)
+        promuoviBlocco(){
+            this.promossi.unshift(...this.studenti) && this.studenti.splice(this.studenti)
+        },
+        bocciaBlocco(){
+            this.bocciati.unshift(...this.studenti) && this.studenti.splice(this.studenti)
         }
     }
     
