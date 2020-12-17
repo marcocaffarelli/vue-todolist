@@ -54,6 +54,9 @@ let app = new Vue({
         ripeti(studente, index){
             //Cliccando nell'icona lo studente verra spostato nell'array studenti dall'array bocciati
             this.studenti.unshift(studente) && this.bocciati.splice(index, 1)
+        },
+        cestina(studente){
+            this.bocciati.splice(studente)
         }
     }
     

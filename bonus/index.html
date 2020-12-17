@@ -31,7 +31,7 @@
                     </ul>
                     <ul>
                         <!-- studenti bocciati-->
-                        <li class="titolo">Lista Studenti Bocciati</li>
+                        <li class="titolo">Lista Studenti Bocciati <i class="fas fa-trash-alt" @click="cestina(studente)"></i></li>
                         <li v-for="(studente, index) in bocciati"><i class="fas fa-user-plus" @click="ripeti(studente,index)"></i>{{studente.text}}</li>                     
                     </ul>
                     <!-- paragrafo che apparirà solo se non ci sono studenti -->
