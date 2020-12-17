@@ -36,7 +36,7 @@ let app = new Vue({
             if(this.studente.length < 4){
             }else {
                 //se'elemento ha più di 3 caratteri verrà inserito nell'array
-                this.studenti.unshift({text:this.studente});
+                this.studenti.unshift({text:this.studente}), this.studente = "";
             }
         },
         elimina(studente,index){
