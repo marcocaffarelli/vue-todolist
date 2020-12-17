@@ -17,22 +17,22 @@
                     <!-- bottone che al click inserira il testo dell'input nel ul -->
                     <button @click="inserisci">Add</button>
                 </div>
-                    <!-- lista degli studenti -->
+                    <!-- liste degli studenti -->
                 <div class="liste">  
                     <ul>
-                        <!-- studenti -->
-                        <li class="titolo">Lista Studenti Confermati</li>
-                        <li v-for="studente in promossi">{{studente.text}}<i @click="rimuovi(studente)" class="fas fa-user-times"></i></li>                     
+                        <!-- studenti promossi  -->
+                        <li class="titolo">Lista Studenti Promossi</li>
+                        <li v-for="(studente, index) in promossi">{{studente.text}}<i @click="rimuovi(studente,index)" class="fas fa-user-times"></i></li>                     
                     </ul>
                     <ul>
-                        <!-- studenti -->
+                        <!-- studenti in prova-->
                         <li class="titolo">Lista Studenti In Prova</li>
-                        <li v-for="studente in studenti"><i class="fas fa-user-plus"></i>{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
+                        <li v-for="(studente, index) in studenti"><i class="fas fa-user-plus" @click="promuovi(studente,index)"></i>{{studente.text}}<i @click="elimina(studente,index)" class="fas fa-user-times"></i></li>                     
                     </ul>
                     <ul>
-                        <!-- studenti -->
+                        <!-- studenti bocciati-->
                         <li class="titolo">Lista Studenti Bocciati</li>
-                        <li v-for="studente in bocciati"><i class="fas fa-user-plus"></i>{{studente.text}}</li>                     
+                        <li v-for="(studente, index) in bocciati"><i class="fas fa-user-plus" @click="ripeti(studente,index)"></i>{{studente.text}}</li>                     
                     </ul>
                     <!-- paragrafo che apparirà solo se non ci sono studenti -->
                 </div>

@@ -39,13 +39,21 @@ let app = new Vue({
                 this.studenti.unshift({text:this.studente});
             }
         },
-        elimina(studente){
-            //Cliccando nell'icona lo studente verra eliminato dall'array
-            this.studenti.splice(studente, 1)
+        elimina(studente,index){
+            //Cliccando nell'icona lo studente verra spostato nell'array bocciati dall'array studenti
+            this.bocciati.unshift(studente) && this.studenti.splice(index, 1)
         },
-        rimuovi(studente){
-            //Cliccando nell'icona lo studente verra eliminato dall'array
-            this.promossi.splice(studente, 1) && this.studenti.unshift({text:this.studente}) 
+        rimuovi(studente,index){
+            //Cliccando nell'icona lo studente verra spostato nell'array studenti dall'array promossi
+            this.studenti.unshift(studente) && this.promossi.splice(index, 1)
+        },
+        promuovi(studente,index){
+            //Cliccando nell'icona lo studente verra spostato nell'array promossi dall'array studenti
+            this.promossi.unshift(studente) && this.studenti.splice(index, 1)
+        },
+        ripeti(studente, index){
+            //Cliccando nell'icona lo studente verra spostato nell'array studenti dall'array bocciati
+            this.studenti.unshift(studente) && this.bocciati.splice(index, 1)
         }
     }
     

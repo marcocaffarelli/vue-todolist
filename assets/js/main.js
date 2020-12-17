@@ -33,9 +33,9 @@ let app = new Vue({
                 this.studenti.unshift({text:this.studente});
             }
         },
-        elimina(studente){
+        elimina(index){
             //Cliccando nell'icona lo studente verra eliminato dall'array
-            this.studenti.splice(studente, 1)
+            this.studenti.splice(index, 1)
         }
     }
     

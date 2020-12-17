@@ -21,7 +21,7 @@
                     <!-- lista degli studenti -->
                     <ul>
                         <!-- studenti -->
-                        <li v-for="studente in studenti">{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
+                        <li v-for="(studente,index) in studenti">{{studente.text}}<i @click="elimina(index)" class="fas fa-user-times"></i></li>                     
                     </ul>
                     <!-- paragrafo che apparirà solo se non ci sono studenti -->
                     <p v-if="studenti.length == 0">Non ci sono studenti</p>
