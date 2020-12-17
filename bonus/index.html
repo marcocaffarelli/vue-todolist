@@ -22,7 +22,7 @@
                     <ul>
                         <!-- studenti -->
                         <li class="titolo">Lista Studenti Confermati</li>
-                        <li v-for="studente in studenti"><i class="fas fa-user-plus"></i>{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
+                        <li v-for="studente in promossi">{{studente.text}}<i @click="rimuovi(studente)" class="fas fa-user-times"></i></li>                     
                     </ul>
                     <ul>
                         <!-- studenti -->
@@ -32,7 +32,7 @@
                     <ul>
                         <!-- studenti -->
                         <li class="titolo">Lista Studenti Bocciati</li>
-                        <li v-for="studente in studenti"><i class="fas fa-user-plus"></i>{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
+                        <li v-for="studente in bocciati"><i class="fas fa-user-plus"></i>{{studente.text}}</li>                     
                     </ul>
                     <!-- paragrafo che apparirà solo se non ci sono studenti -->
                 </div>

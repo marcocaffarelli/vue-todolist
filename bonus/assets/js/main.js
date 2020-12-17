@@ -14,6 +14,16 @@ let app = new Vue({
           {text:"Luca Verdi"},
           {text:"Elena Bianchi"}
        ],
+       bocciati:[
+          {text:"Fabio Verdi"},
+          {text:"Roberta Rossi"},
+          {text:"Marco Bianchi"}
+       ],
+       promossi:[
+          {text:"Azzurra Bianchi"},
+          {text:"Manuel Verdi"},
+          {text:"Asia Rossi"},
+    ],
        //valore iniziale dello studente che verrà creato nel input text
        studente: "",
     },
@@ -32,6 +42,10 @@ let app = new Vue({
         elimina(studente){
             //Cliccando nell'icona lo studente verra eliminato dall'array
             this.studenti.splice(studente, 1)
+        },
+        rimuovi(studente){
+            //Cliccando nell'icona lo studente verra eliminato dall'array
+            this.promossi.splice(studente, 1) && this.studenti.unshift({text:this.studente}) 
         }
     }
     
