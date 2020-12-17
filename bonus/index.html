@@ -21,12 +21,12 @@
                 <div class="liste">  
                     <ul>
                         <!-- studenti promossi  -->
-                        <li class="titolo">Lista Studenti Promossi</li>
+                        <li class="titolo"><i class="fas fa-plane" @click="confermaPromozione(studente)"></i>Lista Studenti Promossi</li>
                         <li v-for="(studente, index) in promossi">{{studente.text}}<i @click="rimuovi(studente,index)" class="fas fa-user-times"></i></li>                     
                     </ul>
                     <ul>
                         <!-- studenti in prova-->
-                        <li class="titolo">Lista Studenti In Prova</li>
+                        <li class="titolo"><i class="far fa-check-circle"></i>Lista Studenti In Prova<i class="far fa-times-circle"></i></li>
                         <li v-for="(studente, index) in studenti"><i class="fas fa-user-plus" @click="promuovi(studente,index)"></i>{{studente.text}}<i @click="elimina(studente,index)" class="fas fa-user-times"></i></li>                     
                     </ul>
                     <ul>

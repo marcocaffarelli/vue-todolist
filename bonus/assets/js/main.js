@@ -57,7 +57,11 @@ let app = new Vue({
         },
         cestina(studente){
             this.bocciati.splice(studente)
-        }
+        },
+        confermaPromozione(studente){
+            this.promossi.splice(studente)
+        },
+       
     }
     
 });
