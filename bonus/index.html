@@ -17,13 +17,25 @@
                     <!-- bottone che al click inserira il testo dell'input nel ul -->
                     <button @click="inserisci">Add</button>
                 </div>
-                    <h2>Lista Studenti</h2>
                     <!-- lista degli studenti -->
+                <div class="liste">  
                     <ul>
                         <!-- studenti -->
-                        <li v-for="studente in studenti">{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
+                        <li class="titolo">Lista Studenti Confermati</li>
+                        <li v-for="studente in studenti"><i class="fas fa-user-plus"></i>{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
+                    </ul>
+                    <ul>
+                        <!-- studenti -->
+                        <li class="titolo">Lista Studenti In Prova</li>
+                        <li v-for="studente in studenti"><i class="fas fa-user-plus"></i>{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
+                    </ul>
+                    <ul>
+                        <!-- studenti -->
+                        <li class="titolo">Lista Studenti Bocciati</li>
+                        <li v-for="studente in studenti"><i class="fas fa-user-plus"></i>{{studente.text}}<i @click="elimina(studente)" class="fas fa-user-times"></i></li>                     
                     </ul>
                     <!-- paragrafo che apparirà solo se non ci sono studenti -->
+                </div>
                     <p v-if="studenti.length == 0">Non ci sono studenti</p>
             </div>
 

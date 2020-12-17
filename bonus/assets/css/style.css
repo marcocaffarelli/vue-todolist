@@ -43,9 +43,14 @@ button:hover{
     background-color: rgb(0,22,50);
     color: rgb(12,217,119);
 }
-
+.titoli{
+    display: flex;
+    flex-direction: row;
+}
 h2{
-    font-size: 40px;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid  rgb(0,22,50);
     color:rgb(0,22,50);
 }
 li{
@@ -58,14 +63,35 @@ li{
     list-style: none;
     position: relative;
 }
+.titolo{
+    border: 3px solid rgb(0,22,50);
+    text-align: center;
+    background-color: rgb(12,217,119);
+    color: rgb(0,22,50);
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+.liste{
+    display: flex;
+}
 i{
     color: white;
-    position: absolute;
-    right: 3px;
     cursor: pointer;
 }
-i:hover{
+.fa-user-times{
+    position: absolute;
+    right: 3px;
+}
+.fa-user-plus{
+    position: absolute;
+    left: 3px;
+}
+.fa-user-times:hover{
     color: red;
+}
+.fa-user-plus:hover{
+    color: blue;
 }
 p{
     font-size: 25px;
