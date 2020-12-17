@@ -55,13 +55,15 @@ let app = new Vue({
             //Cliccando nell'icona lo studente verra spostato nell'array studenti dall'array bocciati
             this.studenti.unshift(studente) && this.bocciati.splice(index, 1)
         },
-        cestina(studente){
-            this.bocciati.splice(studente)
+        cestina(){
+            this.bocciati.splice(this.bocciati)
         },
-        confermaPromozione(studente){
-            this.promossi.splice(studente)
+        confermaPromozione(){
+            this.promossi.splice(this.promossi)
         },
-       
+        promuoviBlocco(studente){
+            this.promossi.unshift(...studente) && this.studenti.splice(studente)
+        }
     }
     
 });
